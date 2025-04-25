@@ -1,0 +1,33 @@
+﻿<Window x:Class="aff.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:aff"
+        mc:Ignorable="d"
+        Title="Учет рабочего времени" Height="450" Width="800">
+	<Window.Background>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.85">
+			<GradientStop Color="White" Offset="0.783"/>
+			<GradientStop Color="#FF0EB7CD" Offset="0"/>
+			<GradientStop Color="#FFACE6ED" Offset="0.2"/>
+		</LinearGradientBrush>
+	</Window.Background>
+	<Grid Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Панель управления -->
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+			<Button Content="Добавить запись" Click="AddRecord_Click" Width="120" Margin="5"/>
+			<Button Content="Редактировать запись" Click="EditRecord_Click" Width="120" Margin="5"/>
+			<Button Content="Удалить запись" Click="DeleteRecord_Click" Width="120" Margin="5"/>
+			<Button Content="Просмотреть отчет" Click="ViewReport_Click" Width="120" Margin="5"/>
+		</StackPanel>
+
+		<!-- Таблица данных -->
+		<DataGrid Name="WorkTimeDataGrid" Grid.Row="1" AutoGenerateColumns="True" SelectionMode="Single" />
+	</Grid>
+</Window>
